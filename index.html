@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.18.0/dist/full.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-gray-900 text-white min-h-screen flex flex-col justify-center items-center px-4"
+  >
+    <div class="bg-gray-800 p-6 rounded-xl shadow-xl w-full max-w-3xl">
+      <h1 class="text-center text-3xl font-bold mb-4 text-purple-200">
+        Todo List
+      </h1>
+
+      <div
+        id="alert"
+        class="hidden bg-teal-400 text-black px-4 py-2 rounded-lg mb-4 text-center font-semibold"
+      ></div>
+
+      <div class="flex flex-col md:flex-row gap-2 mb-4">
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Add a todo . . ."
+          class="input input-bordered flex-1"
+        />
+        <input type="date" id="due-date" class="input input-bordered" />
+        <button id="add-btn" class="btn btn-primary">+</button>
+      </div>
+
+      <div class="flex justify-between mb-4">
+        <button class="btn btn-neutral" onclick="filterTodos()">FILTER</button>
+        <button class="btn btn-secondary" onclick="deleteAll()">
+          DELETE ALL
+        </button>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="table w-full text-white">
+          <thead class="bg-gray-700 text-purple-200">
+            <tr>
+              <th>Task</th>
+              <th>Due Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="todo-list" class="bg-gray-900">
+            <tr>
+              <td colspan="4" class="text-center text-purple-300 py-4">
+                No task found
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer class="text-center text-purple-400 mt-6">
+      Made with ❤️ by <strong>Akash Naik</strong>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
